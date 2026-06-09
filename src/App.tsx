@@ -365,11 +365,11 @@ const Home = ({ navigate }) => (
         <p className="font-mono text-[#c8a2ff] text-sm tracking-wider">
           // INITIALIZING CREATIVE FLOW
         </p>
-        <div className="flex flex-col items-center gap-1 shrink-0 fade-in-up" style={{animationDelay: '0.6s'}}>
+        <div className="relative z-10 flex flex-col items-center gap-1 shrink-0 fade-in-up hover:z-30" style={{animationDelay: '0.6s'}}>
           <img
             src={wechatQr}
             alt="微信二维码"
-            className="interactable w-14 h-14 sm:w-16 sm:h-16 object-cover rounded-sm border border-white/10 bg-white p-1"
+            className="interactable w-14 h-14 sm:w-16 sm:h-16 object-cover rounded-sm border border-white/10 bg-white p-1 cursor-pointer transition-transform duration-300 ease-out hover:scale-[1.8] hover:shadow-[0_0_20px_rgba(200,162,255,0.4)]"
           />
           <span className="text-[10px] font-mono text-gray-500 tracking-widest">WECHAT</span>
         </div>
@@ -384,7 +384,7 @@ const Home = ({ navigate }) => (
         <div>
           <h2 className="text-xl text-white font-medium mb-2">单玉婷 | Jada Shan</h2>
           <p className="text-[#888888] max-w-sm leading-relaxed text-sm">
-            福州大学2026届产品设计本科 | 全链路UI设计师<br/>
+            福州大学2026届产品设计本科 | UI/UX设计师<br/>
             深耕智能硬件、B端后台、C端APP视觉与交互设计，具备量产级落地设计能力。
           </p>
         </div>
@@ -441,12 +441,10 @@ const Capabilities = () => (
           { title: "C端APP设计", desc: "少儿教育APP全改版、交互优化、游戏化设计、链路重构。", num: "03" },
           { title: "视觉&动效设计", desc: "主题皮肤、图标系统、AIGC视觉、视频剪辑、交互动效。", num: "04" }
         ].map((item, idx) => (
-          <div key={idx} className="interactable bg-white/[0.02] border border-white/5 p-8 flex flex-col justify-between min-h-[280px] fade-in-up" style={{animationDelay: `${idx * 0.1}s`}}>
-            <span className="text-xs font-mono text-gray-600 mb-8">{item.num} //</span>
-            <div>
-              <h4 className="text-xl text-white font-medium mb-4">{item.title}</h4>
-              <p className="text-sm text-gray-400 leading-relaxed">{item.desc}</p>
-            </div>
+          <div key={idx} className="interactable bg-white/[0.02] border border-white/5 p-8 flex flex-col min-h-[280px] fade-in-up" style={{animationDelay: `${idx * 0.1}s`}}>
+            <span className="text-xs font-mono text-gray-600 h-5 mb-8 block">{item.num} //</span>
+            <h4 className="text-xl text-white font-medium mb-4 leading-snug">{item.title}</h4>
+            <p className="text-sm text-gray-400 leading-relaxed">{item.desc}</p>
           </div>
         ))}
       </div>
