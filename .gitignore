@@ -13,6 +13,10 @@ dist-ssr
 .vite
 *.local
 
+# 原始素材备份（网站已使用 src/assets/，无需上传）
+image/
+卡片封面/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
